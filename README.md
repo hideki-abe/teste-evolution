@@ -22,4 +22,7 @@ Para as funções de fatorial e remover letras duplicadas, foi criada uma classe
 **Exemplo de JSON utilizado para a requisicao PUT (update)**
 <img src="https://github.com/hideki-abe/teste-evolution/blob/master/anexos/put.JPG"/>
 
+**Exemplo de JSON obtido ao realizar GET**
+<img src="https://github.com/hideki-abe/teste-evolution/blob/master/anexos/get.JPG"/>
+
 **Notas:** Eu não consegui integrar o Swagger com o SpringBoot, aparentemente o Swagger ainda não está funcionando com a versão 3.0.0 do Spring. 
