@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -33,6 +36,8 @@ public class Pessoa {
     private String bairro;
     @Column(name = "uf")
     private String uf;
+    @OneToMany(mappedBy = "pessoa")
+    private List<Contato> contatos = new ArrayList<>();
 
 
 }

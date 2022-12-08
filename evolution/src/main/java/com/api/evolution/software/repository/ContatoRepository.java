@@ -11,7 +11,8 @@ import java.util.List;
 public interface ContatoRepository extends JpaRepository<Contato, Integer> {
 
     List<Contato> findAll();
-    Pessoa save(Pessoa pessoa);
-    Integer deletePessoaById(Integer id);
+    Contato save(Contato contato);
+    Integer deleteContatoById(Integer id);
+
 
 }

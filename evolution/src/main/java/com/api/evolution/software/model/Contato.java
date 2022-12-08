@@ -22,7 +22,10 @@ public class Contato {
     private String telefone;
     @Column(name = "celular")
     private String celular;
-    @Column(name = "idPessoa")
-    private int idPessoa;
+
+    @ManyToOne
+    @JoinColumn(name = "idpessoa")
+    private Pessoa pessoa;
+
 
 }

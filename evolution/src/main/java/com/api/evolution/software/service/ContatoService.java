@@ -1,9 +1,7 @@
 package com.api.evolution.software.service;
 
 import com.api.evolution.software.model.Contato;
-import com.api.evolution.software.model.Pessoa;
 import com.api.evolution.software.repository.ContatoRepository;
-import com.api.evolution.software.repository.PessoaRepository;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
@@ -24,13 +22,13 @@ public class ContatoService {
     public void update(Contato contato) {
         System.out.println(contato.getId());
         repository.findById(contato.getId())
-                .ifPresent( pessoa -> {
+                .ifPresent( contatoPresente -> {
 
 
-                    repository.save(pessoa);
+                    repository.save(contatoPresente);
                 });
     }
 
-    public Integer delete(Integer id){ return repository.deletePessoaById(id); }
+    public Integer delete(Integer id){ return repository.deleteContatoById(id); }
 
 }
