@@ -4,7 +4,6 @@ import com.api.evolution.software.model.Pessoa;
 import com.api.evolution.software.service.PessoaService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,22 +22,22 @@ public class PessoaController {
 
     @GetMapping
     @ApiOperation("Lista todas as pessoas.")
-    public List<Pessoa> findAll(){
+    public List<Pessoa> findPessoas(){
         return service.findAll();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Salva uma pessoa.")
-    public Pessoa create(@RequestBody Pessoa pessoa){
-        return service.save(pessoa);
+    public void create(@RequestBody Pessoa pessoa){
+        service.save(pessoa);
     }
 
     @PutMapping
     @ApiOperation("Realiza update em uma pessoa.")
     public void update(@RequestBody Pessoa pessoa){ service.update(pessoa); }
 
-    @DeleteMapping(value = "/{idpessoas}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "{id}")
     @ApiOperation("Deleta uma pessoa.")
-    public Integer delete(Integer id){ return service.delete(id); }
+    public Integer delete(@PathVariable Integer id){ return service.delete(id); }
 }

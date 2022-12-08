@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/contatos")
 public class ContatoController {
-/*
 
     private ContatoService service;
 
@@ -34,6 +33,5 @@ public class ContatoController {
 
     @DeleteMapping(value = "/{idcontato}")
     public Integer delete(Integer id){ return service.delete(id); }
-*/
 
 }

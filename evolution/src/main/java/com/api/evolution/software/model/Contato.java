@@ -1,13 +1,13 @@
 package com.api.evolution.software.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 import jakarta.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "contatos")
 public class Contato {
@@ -24,7 +24,8 @@ public class Contato {
     private String celular;
 
     @ManyToOne
-    @JoinColumn(name = "idpessoa")
+    @JoinColumn(name = "idpessoas")
+    @JsonIgnore
     private Pessoa pessoa;
 
 

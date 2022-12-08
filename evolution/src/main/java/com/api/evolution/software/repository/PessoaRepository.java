@@ -12,4 +12,5 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Integer> {
     List<Pessoa> findAll();
     Pessoa save(Pessoa pessoa);
     Integer deletePessoaById(Integer id);
+
 }

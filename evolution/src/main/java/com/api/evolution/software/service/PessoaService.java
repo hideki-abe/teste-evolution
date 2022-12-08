@@ -1,20 +1,22 @@
 package com.api.evolution.software.service;
 
+import com.api.evolution.software.model.Contato;
 import com.api.evolution.software.model.Pessoa;
+import com.api.evolution.software.repository.ContatoRepository;
 import com.api.evolution.software.repository.PessoaRepository;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PessoaService {
 
     PessoaRepository repository;
+    ContatoRepository contatoRepository;
 
-    public PessoaService(PessoaRepository repository){
+    public PessoaService(PessoaRepository repository, ContatoRepository contatoRepository){
+        this.contatoRepository = contatoRepository;
         this.repository = repository;
     }
 
@@ -22,11 +24,16 @@ public class PessoaService {
         return repository.findAll();
     }
 
-    public Pessoa save(Pessoa pessoa){ return repository.save(pessoa); }
+    public void save(Pessoa pessoa){
+        repository.save(pessoa);
+        for(Contato contato: pessoa.getContatos()){
+            contato.setPessoa(pessoa);
+            contatoRepository.save(contato);
+        }
+    }
 
     @Transactional
     public void update(Pessoa pessoaAtt) {
-        System.out.println(pessoaAtt.getId());
         repository.findById(pessoaAtt.getId())
                 .ifPresent( pessoa -> {
                     pessoa.setNome(pessoaAtt.getNome());
@@ -41,5 +48,6 @@ public class PessoaService {
                 });
     }
 
+    @Transactional
     public Integer delete(Integer id){ return repository.deletePessoaById(id); }
 }

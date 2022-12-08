@@ -1,8 +1,6 @@
 package com.api.evolution.software.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -11,7 +9,8 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "pessoas")
 public class Pessoa {
@@ -36,7 +35,7 @@ public class Pessoa {
     private String bairro;
     @Column(name = "uf")
     private String uf;
-    @OneToMany(mappedBy = "pessoa")
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, targetEntity = Contato.class, fetch = FetchType.LAZY)
     private List<Contato> contatos = new ArrayList<>();
 
 
