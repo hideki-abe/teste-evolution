@@ -1,6 +1,6 @@
 # teste-evolution
-**O projeto foi realizado todo no Intellij. É provável que haja incompatibilidade em outras IDEs!**
-API com as entidades Pessoa e Contato para um teste de uma vaga de estágio. </br>
+API com as entidades Pessoa e Contato para um teste de uma vaga de estágio. </br></br>
+**O projeto foi realizado todo no Intellij. É provável que haja incompatibilidade em outras IDEs!**</br>
 Ferramentas utilizadas: **SpringBoot** com **Maven**, utilizando o banco de dados **PostgreSQL**. Para os testes das requisições, o **Postman** foi utilizado.
 
 A api foi feita utilizando o modelo <a href="https://github.com/hideki-abe/teste-evolution/blob/master/anexos/sql.sql">sql</a> e os relacionamentos foram introduzidos com o JPA.
