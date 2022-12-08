@@ -16,3 +16,10 @@ localhost:8090/contatos?id=1 (NÃO ESTÁ FUNCIONANDO)
 
 Para as funções de fatorial e remover letras duplicadas, foi criada uma classe contendo as duas funções. Não foram realizados testes pelo console, mas foram feitos testes unitários para cada função, utiilizando o JUnit 4. 
 
+**Exemplo de JSON utilizado para a requisicao POST**
+<img src="https://github.com/hideki-abe/teste-evolution/blob/master/anexos/post.JPG"/>
+
+**Exemplo de JSON utilizado para a requisicao PUT (update)**
+<img src="https://github.com/hideki-abe/teste-evolution/blob/master/anexos/put.JPG"/>
+
+**Notas:** Eu não consegui integrar o Swagger com o SpringBoot, aparentemente o Swagger ainda não está funcionando com a versão 3.0.0 do Spring. 
