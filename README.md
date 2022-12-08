@@ -13,3 +13,6 @@ localhost:8090/contatos para o CRUD da entidade Contato </br>
 ### Metodos DELETE
 localhost:8090/pessoas/1?idpessoas=1 para excluir pelo id = 1, por exemplo </br>
 localhost:8090/contatos?id=1 (NÃO ESTÁ FUNCIONANDO)
+
+Para as funções de fatorial e remover letras duplicadas, foi criada uma classe contendo as duas funções. Não foram realizados testes pelo console, mas foram feitos testes unitários para cada função, utiilizando o JUnit 4. 
+
